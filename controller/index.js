@@ -1,0 +1,23 @@
+module.exports = {
+    SecurityCtrl: require("./security.Controller"),
+    CountryCtrl: require("./country.controller"),
+    AccountCtrl: require("./account.controller"),
+    SubscriptionCtrl: require("./subscription.controller"),
+    ServiceCtrl: require("./service.controller"),
+    TransferCtrl: require("./transfer.controller"),
+    UserCtrl: require("./user.controller"),
+    TransferTypeCtrl: require("./transferType.controller"),
+    ParamCtrl: require("./params.controller"),
+    ProfilCtrl: require("./Profil.controller"),
+    SpmCtrl: require("./Spm.controller"),
+    WalletCtrl: require("./wallet.controller"),
+    Api_AccountCtrl: require("./api_account.controller"),
+    CarCtrl: require('./car.controller.js'),
+    HistoBasculmtCtrl: require('./histo_basculmt.controller.js'),
+    HistoControlCtrl: require('./histo_control.controller.js'),
+    KycCtrl: require('./kyc.controller.js'),
+    NatureTransCtrl: require('./natureTrans.controller.js'),
+    QrCodesGrid: require('./qrGrid.controller.js'),
+    TodoCtrl: require('./todo.controller.js'),
+    
+}
