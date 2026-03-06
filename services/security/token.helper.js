@@ -21,12 +21,8 @@ const getSecret = () => {
   return new TextEncoder().encode(raw);
 };
 
-/**
- * Base token builder — all tokens share the same logic.
- * @param {object} payload      - JWT claims to embed
- * @param {string} expiresIn    - Expiration (e.g. '15m', '1h', '7d')
- * @returns {Promise<string>}   - Signed JWT string
- */
+
+
 const buildToken = async (payload, expiresIn) => {
   const secret = getSecret();
 
@@ -37,11 +33,6 @@ const buildToken = async (payload, expiresIn) => {
     .sign(secret);
 };
 
-/**
- * Generates a short-lived access token.
- * @param {{ userId: string, email: string }} payload
- * @returns {Promise<string>}
- */
 const generateAccessToken = (payload) => {
   const expiresIn = process.env.TOKEN_EXPIRES_IN;
 
@@ -52,11 +43,7 @@ const generateAccessToken = (payload) => {
   return buildToken(payload, expiresIn);
 };
 
-/**
- * Generates a long-lived refresh token (7 days).
- * @param {{ userId: string, email: string }} payload
- * @returns {Promise<string>}
- */
+
 const generateRefreshToken = (payload) => {
   return buildToken(payload, "7d");
 };

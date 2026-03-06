@@ -12,5 +12,6 @@ module.exports = {
     gen_qrcode: require('./qrcodes/gen_qrcode'),
     verifyOtp: require('./security/verifyOtp.service'),
     Otp: require('./security/otp.service'),
-    MobileRegister: require('./security/mobileRegister.service')
+    MobileRegister: require('./security/mobileRegister.service'),
+    driverSSE: require('./sse/driver_sse_publisher'),
 }

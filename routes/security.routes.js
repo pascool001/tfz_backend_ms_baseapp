@@ -21,11 +21,14 @@ const {
   verify_otp,
   send_otp,
   MobileRegisterCtrl,
+  get_sse_token,
 } = SecurityCtrl;
 
 auth_api_router.route(`${AUTH_API_PREFIX}/register`).post(register);
 
-auth_api_router.route(`${AUTH_API_PREFIX}/mobileRegister`).post(MobileRegisterCtrl);
+auth_api_router
+  .route(`${AUTH_API_PREFIX}/mobileRegister`)
+  .post(MobileRegisterCtrl);
 
 auth_api_router.route(`${AUTH_API_PREFIX}/activate`).post(tokenActivation);
 
@@ -54,5 +57,9 @@ auth_api_router.route(`${AUTH_API_PREFIX}/changePwd`).post(changePwd); // ok
 auth_api_router.use(`${AUTH_API_PREFIX}/getMe`, gatewayAndUser);
 
 auth_api_router.route(`${AUTH_API_PREFIX}/getMe`).get(getMe); //ok
+
+auth_api_router.use(`${AUTH_API_PREFIX}/get_sse_token`, gatewayAndUser);
+
+auth_api_router.route(`${AUTH_API_PREFIX}/get_sse_token`).get(get_sse_token); //ok
 
 module.exports = auth_api_router;

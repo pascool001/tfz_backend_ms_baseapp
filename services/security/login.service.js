@@ -66,7 +66,7 @@ const SignIn = async (credentials) => {
 
   // 5. Generate token pair
   const tokenPayload = {
-    userId: connectingUser._id,
+    userId: connectingUser._id.toHexString(),
     email: connectingUser.user_email,
   };
 
